@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Logout Modal Example</title>
+  <style>
+    /* Styles for the modal and overlay */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+  </style>
+</head>
+<body>
+  <button id="logoutButton">Logout</button>
+
+  <div class="overlay" id="overlay"></div>
+  <div class="modal" id="modal">
+    <h2>Logout</h2>
+    <p>Are you sure you want to logout?</p>
+    <button id="confirmLogout">Yes, Logout</button>
+    <button id="cancelLogout">Cancel</button>
+  </div>
+
+  <script>
+    const logoutButton = document.getElementById('logoutButton');
+    const overlay = document.getElementById('overlay');
+    const modal = document.getElementById('modal');
+    const confirmLogoutButton = document.getElementById('confirmLogout');
+    const cancelLogoutButton = document.getElementById('cancelLogout');
+
+    logoutButton.addEventListener('click', () => {
+      overlay.style.display = 'block';
+      modal.style.display = 'block';
+    });
+
+    cancelLogoutButton.addEventListener('click', () => {
+      overlay.style.display = 'none';
+      modal.style.display = 'none';
+    });
+
+    confirmLogoutButton.addEventListener('click', () => {
+      // Perform logout logic here
+      alert('Logged out successfully!');
+      // You can redirect to a logout page or perform other actions as needed
+
+      overlay.style.display = 'none';
+      modal.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
